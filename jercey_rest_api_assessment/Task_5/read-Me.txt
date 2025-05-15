@@ -1,0 +1,10 @@
+Please use your port number in the URL's (replace 8087 with your port number). 
+use below URL's after started your tomcat server. 
+
+below url is to demonstrate the matrix param
+
+1. http://localhost:8087/praveen_param_annotation/webresources/myresource/zoho/corp;matrixParam1=value1;matrixParam2=value2
+
+below url is to demonstrate the header param
+
+2. http://localhost:8087/praveen_param_annotation/webresources/myresource/header

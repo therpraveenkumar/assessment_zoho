@@ -1,0 +1,44 @@
+Please use your port number in the URL's (replace 8087 with your port number). 
+use below URL's on your postman. 
+
+go to \jercey_rest_api_assessment\Task_8\crud_operations\src\main\java\com\praveen\crud_operations\DbConnection.java
+
+replace 5432 to your port number and replace hello with your db name. reference given in the below line
+
+jdbc:postgresql://localhost:5432/hello
+
+GET USER
+--------
+URL: http://localhost:8087/helloApp/webresources/users/
+METHOD: GET
+
+CREATE USER
+-----------
+URL: http://localhost:8087/helloApp/webresources/users/create_user
+METHOD: POST
+BODY:
+{
+"user_name":"new_user",
+"country":"africa"
+}
+
+
+UPDATE USER
+-----------
+URL: http://localhost:8087/helloApp/webresources/users/update_user
+METHOD: PUT
+BODY:
+{
+"user_id":"2",
+"user_name":"new_kumar",
+"country":"us"
+}
+
+DELETE USER
+-----------
+URL: http://localhost:8087/helloApp/webresources/users/delete_user
+METHOD: DELETE
+BODY:
+{
+"user_id":"1"
+}

@@ -1,0 +1,1 @@
+run this project and click on the hyperlink in the home page, then you will redirect to the greeting page

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="LoggingJavadocExample" basedir="." default="build">
+
+    <property name="build.dir" value="build"/>
+	<property name="log.level" value="info"/>
+    <property name="javadoc.dir" value="docs"/>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${javadoc.dir}"/>
+		
+        <echo message="Cleaning process is done" level="warn"/>
+    </target>
+
+    <target name="compile" depends="clean">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="src" destdir="${build.dir}">
+            <include name="**/*.java"/>
+        </javac>
+		<echo message="compile is done" level="info"/>
+    </target>
+
+    <target name="javadoc" depends="compile">
+        <mkdir dir="${javadoc.dir}"/>
+        <javadoc sourcepath="src" destdir="${javadoc.dir}">
+            <fileset dir="src">
+                <include name="**/*.java"/>
+            </fileset>
+        </javadoc>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="Example" fork="true">
+            <classpath>
+                <path location="${build.dir}"/>
+            </classpath>
+        </java>
+    </target>
+
+    <target name="build" depends="clean, compile, javadoc, run"/>
+
+</project>

@@ -1,0 +1,572 @@
+USER CONTROLLER
+---------------
+CREATE USER
+------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/users/adduser
+METHOD: POST
+BODY:
+{
+    "userName":"postpraveen",
+    "email":"postpraveen@gmail.com",
+    "password":"Post1234",
+    "state":"tamil nadu",
+    "city":"chennai",
+    "country":"india",
+    "pincode":"123",
+    "hint":"code word",
+    "phoneNumber":"8461058349",
+    "addressLine":"2nd street, sathya nagar",
+    "dob":"24/05/2000"
+}
+
+Response: user created
+LOGIN
+-----
+URL: http://localhost:8087/praveen_jersey_shop/webapi/users/valid
+METHOD: POST
+BODY:
+{
+"email":"guest@gmail.com",
+"password":"Guest123"
+}
+
+Response: user found
+
+GET ALL CUSTOMERS
+-----------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/users
+METHOD: GET
+BODY:
+Response:
+{"user":[{"addressLine":"2nd street","city":"chennai","country":"india","email":"kumar@gmail.com","hint_":"three digit with name","phoneNumber":"1122334455","pincode":"343434","state":"tamil nadu","userId":"29","userName":"kumar","userRole":"customer"},{"addressLine":"4th street, mount road","city":"chennai","country":"india","email":"guest@gmail.com","hint_":"Invalid Date","phoneNumber":"1234567890","pincode":"123","state":"tamil nadu","userId":"37","userName":"guest","userRole":"customer"},{"addressLine":"sjd","city":"dfdf","country":"kjhjh","email":"random@gmail.com","hint_":"Invalid Date","phoneNumber":"0293848292","pincode":"34343","state":"kkkh","userId":"41","userName":"random","userRole":"customer"},{"addressLine":"ddfadf","city":"dfd","country":"dfdf","email":"dffdfd@gmail.com","hint_":"Invalid Date","phoneNumber":"9384920193","pincode":"3434","state":"dfdf","userId":"43","userName":"fefdfdfd","userRole":"customer"},{"addressLine":"ddfd","city":"ddfddd","country":"fdfdf","email":"dadfdfd@gmail.com","hint_":"dfdfa","phoneNumber":"8493029483","pincode":"334","state":"dfd","userId":"47","userName":"dfdsfd","userRole":"customer"},{"addressLine":"2nd street, hello nagar","city":"chennai","country":"india","email":"one@gmail.com","hint_":"code word","phoneNumber":"0194829302","pincode":"2349382","state":"tamil nadu","userId":"45","userName":"one","userRole":"customer"},{"addressLine":"mount road","city":"chennai","country":"india","email":"admin@gmail.com","hint_":"my name with digit","phoneNumber":"1234567888","pincode":"49494","state":"andhra","userId":"16","userName":"admin","userRole":"customer"},{"addressLine":"2nd street, sathya nagar","city":"chennai","country":"india","email":"praveen34@gmail.com","hint_":"my name with digit","phoneNumber":"1234567891","pincode":"3433","state":"tamil nadu","userId":"14","userName":"praveen kumar","userRole":"customer"},{"addressLine":"porur main road","city":"chennai","country":"india","email":"praveen123@gmail.com","hint_":"my name with digit","phoneNumber":"1234512345","pincode":"3443","state":"tamil nadu","userId":"17","userName":"praveen","userRole":"customer"},{"addressLine":"2nd street, sathya nagar","city":"chennai","country":"USA","email":"kumaran@gmail.com","hint_":"My first pet's name","phoneNumber":"0372946205","pincode":"20000","state":"bangalore","userId":"50","userName":"kumaran","userRole":"customer"},{"addressLine":"railway station","city":"chennai","country":"australia","email":"kumaran@gamil.com","hint_":"3 digit code","phoneNumber":"1020304050","pincode":"343433","state":"tamil nadu","userId":"20","userName":"kumaran","userRole":"customer"},{"addressLine":"mount road","city":"chennai","country":"india","email":"guru@gmail.com","hint_":"four digit","phoneNumber":"0099887766","pincode":"393939","state":"tamil nadu","userId":"30","userName":"guru","userRole":"customer"},{"addressLine":"ddfd","city":"fdfdf","country":"dfdf","email":"hellos@gmail.com","hint_":"Invalid Date","phoneNumber":"0918940293","pincode":"3343","state":"fdfdfd","userId":"36","userName":"hello","userRole":"customer"},{"addressLine":"dfdf","city":"dfdf","country":"dfdfd","email":"okay1234@gmail.com","hint_":"Invalid Date","phoneNumber":"1234567899","pincode":"334","state":"dfdf","userId":"40","userName":"ok","userRole":"customer"},{"addressLine":"fdfd","city":"fdfd","country":"dfdfd","email":"dfdfdfd@gmail.com","hint_":"Invalid Date","phoneNumber":"8393929294","pincode":"343","state":"fdfdf","userId":"42","userName":"dff","userRole":"customer"},{"addressLine":"ljld","city":"ddff","country":"jd","email":"newer@gmail.com","hint_":"accepted","phoneNumber":"9483920384","pincode":"343","state":"lkjlkfds","userId":"46","userName":"newer","userRole":"customer"},{"addressLine":"2nd street","city":"chennai","country":"india","email":"praveen2000@gmail.com","hint_":"born city","phoneNumber":"6789009876","pincode":"34343","state":"tamil nadu","userId":"19","userName":"praveen","userRole":"customer"},{"addressLine":"mount road","city":"chennai","country":"india","email":"praveenkumar92@zoho.com","hint_":"name with digit","phoneNumber":"9080706050","pincode":"600001","state":"tamil nadu","userId":"23","userName":"praveen kumar","userRole":"customer"},{"addressLine":"2nd street, sathya nagar","city":"chennai","country":"india","email":"newpraveen@gmail.com","hint_":"three digit code","phoneNumber":"7565859505","pincode":"343434","state":"tamil nadu","userId":"28","userName":"praveen","userRole":"customer"},{"addressLine":"2nd street, sathya nagar","city":"chennai","country":"india","email":"praveenkumar92@gmail.com","hint_":"three digit code","phoneNumber":"1234560708","pincode":"343434","state":"tamil nadu","userId":"25","userName":"praveen kumar","userRole":"customer"},{"addressLine":"mount road","city":"chennai","country":"india","email":"ranjith@gmail.com","hint_":"name with three code word","phoneNumber":"8362018492","pincode":"2343","state":"tamil nadu","userId":"52","userName":"ranjith","userRole":"customer"}]}
+
+MAKE ADMIN:
+-----------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/users/makeadmin
+METHOD: PUT
+BODY:
+{
+"userRole":"admin",
+"userId":"36"
+}
+
+Response: updated successfully
+
+GET USER BY ID
+--------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/users/getuserbyid?userid=29
+METHOD: GET
+
+Response: {"addressLine":"ddfd","city":"fdfdf","country":"dfdf","email":"hellos@gmail.com","hint_":"Invalid Date","phoneNumber":"0918940293","pincode":"3343","state":"fdfdfd","userId":"36","userName":"hello","userRole":"admin"}
+
+GET USER BY EMAIL
+------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/users/getuserbyemail?email=guest@gmail.com
+METHOD: GET
+
+Response: {"addressLine":"4th street, mount road","city":"chennai","country":"india","email":"guest@gmail.com","hint_":"Invalid Date","phoneNumber":"1234567890","pincode":"123","state":"tamil nadu","userId":"37","userName":"guest","userRole":"customer"}
+
+GET CUSTOMERS WITHOUT ORDER
+----------------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/users/customerwithoutorder
+METHOD: GET
+
+Response: {"user":[{"addressLine":"railway station","city":"chennai","country":"australia","email":"kumaran@gamil.com","hint_":"3 digit code","phoneNumber":"1020304050","pincode":"343433","state":"tamil nadu","userId":"20","userName":"kumaran","userRole":"customer"},{"addressLine":"porur main road","city":"chennai","country":"india","email":"praveen123@gmail.com","hint_":"my name with digit","phoneNumber":"1234512345","pincode":"3443","state":"tamil nadu","userId":"17","userName":"praveen","userRole":"customer"},{"addressLine":"ddfd","city":"ddfddd","country":"fdfdf","email":"dadfdfd@gmail.com","hint_":"dfdfa","phoneNumber":"8493029483","pincode":"334","state":"dfd","userId":"47","userName":"dfdsfd","userRole":"customer"},{"addressLine":"ljld","city":"ddff","country":"jd","email":"newer@gmail.com","hint_":"accepted","phoneNumber":"9483920384","pincode":"343","state":"lkjlkfds","userId":"46","userName":"newer","userRole":"customer"},{"addressLine":"dfdf","city":"dfdf","country":"dfdfd","email":"okay1234@gmail.com","hint_":"Invalid Date","phoneNumber":"1234567899","pincode":"334","state":"dfdf","userId":"40","userName":"ok","userRole":"customer"},{"addressLine":"mount road","city":"chennai","country":"india","email":"ranjith@gmail.com","hint_":"name with three code word","phoneNumber":"8362018492","pincode":"2343","state":"tamil nadu","userId":"52","userName":"ranjith","userRole":"customer"},{"addressLine":"4th street, mount road","city":"chennai","country":"india","email":"guest@gmail.com","hint_":"Invalid Date","phoneNumber":"1234567890","pincode":"123","state":"tamil nadu","userId":"37","userName":"guest","userRole":"customer"},{"addressLine":"2nd street, sathya nagar","city":"chennai","country":"india","email":"newpraveen@gmail.com","hint_":"three digit code","phoneNumber":"7565859505","pincode":"343434","state":"tamil nadu","userId":"28","userName":"praveen","userRole":"customer"},{"addressLine":"mount road","city":"chennai","country":"india","email":"guru@gmail.com","hint_":"four digit","phoneNumber":"0099887766","pincode":"393939","state":"tamil nadu","userId":"30","userName":"guru","userRole":"customer"},{"addressLine":"fdfd","city":"fdfd","country":"dfdfd","email":"dfdfdfd@gmail.com","hint_":"Invalid Date","phoneNumber":"8393929294","pincode":"343","state":"fdfdf","userId":"42","userName":"dff","userRole":"customer"},{"addressLine":"2nd street","city":"chennai","country":"india","email":"kumar@gmail.com","hint_":"three digit with name","phoneNumber":"1122334455","pincode":"343434","state":"tamil nadu","userId":"29","userName":"kumar","userRole":"customer"},{"addressLine":"sjd","city":"dfdf","country":"kjhjh","email":"random@gmail.com","hint_":"Invalid Date","phoneNumber":"0293848292","pincode":"34343","state":"kkkh","userId":"41","userName":"random","userRole":"customer"},{"addressLine":"mount road","city":"chennai","country":"india","email":"admin@gmail.com","hint_":"my name with digit","phoneNumber":"1234567888","pincode":"49494","state":"andhra","userId":"16","userName":"admin","userRole":"customer"},{"addressLine":"mount road","city":"chennai","country":"india","email":"praveenkumar92@zoho.com","hint_":"name with digit","phoneNumber":"9080706050","pincode":"600001","state":"tamil nadu","userId":"23","userName":"praveen kumar","userRole":"customer"},{"addressLine":"2nd street, hello nagar","city":"chennai","country":"india","email":"one@gmail.com","hint_":"code word","phoneNumber":"0194829302","pincode":"2349382","state":"tamil nadu","userId":"45","userName":"one","userRole":"customer"},{"addressLine":"ddfadf","city":"dfd","country":"dfdf","email":"dffdfd@gmail.com","hint_":"Invalid Date","phoneNumber":"9384920193","pincode":"3434","state":"dfdf","userId":"43","userName":"fefdfdfd","userRole":"customer"},{"addressLine":"2nd street, sathya nagar","city":"chennai","country":"india","email":"praveen34@gmail.com","hint_":"my name with digit","phoneNumber":"1234567891","pincode":"3433","state":"tamil nadu","userId":"14","userName":"praveen kumar","userRole":"customer"}]}
+
+
+
+
+--------------------- PRODUCT TABLE -------------------
+ADD PRODUCT
+-----------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/products/addproduct
+METHOD: POST
+BODY:
+{
+"productName":"new_pk_prod",
+"description":"best in the market",
+"price":"10.2",
+"stockQuantity":"5",
+"categoryId":"1"
+}
+
+Response: added successfully
+
+
+SEARCH PRODUCTS
+---------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/products/searchproduct?search=laptop
+METHOD: GET
+
+Response:
+{
+    "product": [
+        {
+            "categoryId": "1",
+            "description": "one best laptop at affordable price",
+            "price": "50000.0",
+            "productId": "31",
+            "productName": "dell-x34",
+            "stockQuantity": "160"
+        },
+        {
+            "categoryId": "1",
+            "description": "most power ful laptop",
+            "price": "120000.0",
+            "productId": "1",
+            "productName": "DELL-236",
+            "stockQuantity": "67"
+        }
+    ]
+}
+
+GET PRODUCT BY ID
+-----------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/products/getproductbyid?productid=1
+METHOD: GET
+
+Response: 
+{
+    "categoryId": "1",
+    "description": "most power ful laptop",
+    "price": "120000.0",
+    "productId": "1",
+    "productName": "DELL-236",
+    "stockQuantity": "67"
+}
+
+UPDATE PRODUCT STOCK
+--------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/products/updatestock
+METHOD: PUT
+BODY:
+{
+"productId":"10",
+"stockQuantity":"5"
+}
+
+Response: stock updated successfully
+
+GET ALL PRODUCTS
+----------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/products/getallproducts
+METHOD: GET
+
+Response:
+{
+    "product": [
+        {
+            "categoryId": "1",
+            "description": "most power ful laptop",
+            "price": "120000.0",
+            "productId": "1",
+            "productName": "DELL-236",
+            "stockQuantity": "67"
+        },
+        {
+            "categoryId": "1",
+            "description": "slim laptop",
+            "price": "50000.0",
+            "productId": "3",
+            "productName": "hp-236",
+            "stockQuantity": "1100"
+        },
+        {
+            "categoryId": "1",
+            "description": "affordable to work",
+            "price": "11000.0",
+            "productId": "4",
+            "productName": "lenovo-d34",
+            "stockQuantity": "87"
+        }
+    ]
+}
+
+DELETE PRODUCT
+--------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/products/removeproduct?productid=13
+METHOD: DELETE
+
+Response: deleted successfully
+
+-------------- CANCEL TABLE -------------------------
+ADD CANCEL RECORDS
+------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/cancel/addcancel
+METHOD: POST
+BODY:
+{
+    "orderId_":"104",
+    "reason_":"bad product"
+}
+Response: cancel record created successfully
+
+
+GET ALL CANCEL RECORDS
+----------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/cancel/getcancel
+METHOD: GET
+Response: 
+{
+    "cancel": [
+        {
+            "cancelId_": "13",
+            "canceledAt_": "2024-10-27 15:06:37.213+05:30",
+            "orderId_": "54",
+            "reason_": "hanging issue"
+        },
+        {
+            "cancelId_": "14",
+            "canceledAt_": "2024-10-27 19:30:37.527+05:30",
+            "orderId_": "55",
+            "reason_": "don't like it"
+        },
+        {
+            "cancelId_": "15",
+            "canceledAt_": "2024-10-28 05:59:13.543+05:30",
+            "orderId_": "56",
+            "reason_": "over priced"
+        },
+        {
+            "cancelId_": "16",
+            "canceledAt_": "2024-10-28 12:47:31.673+05:30",
+            "orderId_": "57",
+            "reason_": "over price"
+        }
+    ]
+}
+
+
+------------------ PRODUCT CATEGORY --------------
+CREATE PRODUCT CATEGORY
+-------------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/productcategory/addcategory
+METHOD: POST
+BODY:
+{
+    "categoryName":"pravee_post_category_post"
+}
+Response: category record created successfully
+
+GET CATEGORY BY ID
+=================
+URL: http://localhost:8087/praveen_jersey_shop/webapi/productcategory/getcategorybyid?categoryid=1
+METHOD: GET
+
+Response:
+{
+    "categoryId": "1",
+    "categoryName": "laptop"
+}
+
+GET ALL CATEGORY
+----------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/productcategory/getallcategory
+METHOD: GET
+Response:
+{
+    "productCategory": [
+        {
+            "categoryId": "1",
+            "categoryName": "laptop"
+        },
+        {
+            "categoryId": "3",
+            "categoryName": "mobile"
+        },
+        {
+            "categoryId": "4",
+            "categoryName": "saree"
+        }
+    ]
+}
+
+------------- CART TABLE --------------
+
+CREATE CART AND GET
+-------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/cart/addcart
+METHOD: POST
+BODY:
+{
+    "userId":"52"
+}
+
+Response: 
+{
+    "cartId": "23",
+    "createdAt": "2024-11-24",
+    "userId": "52"
+}
+
+--------- PAYMENT TABLE ------------
+
+CREATE PAYMENT
+-------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/payment/addpayment
+METHOD: POST
+BODY: 
+{
+    "orderId":"54",
+    "paymentMethod":"UPI"
+}
+
+Response: payment record created successfully
+
+UPDATE PAYMENT STATUS TO COMPLETED
+----------------------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/payment/paymentdone
+METHOD: PUT
+BODY:
+{
+    "orderId":"106"
+}
+
+Response: payment record updated successfully
+
+GET PAYMENT RECORDS
+-------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/payment/getpayments
+METHOD: GET
+Response: 
+{
+    "payment": [
+        {
+            "orderId": "54",
+            "paymentDate": "2024-10-27 15:05:16.049+05:30",
+            "paymentId": "44",
+            "paymentMethod": "UPI",
+            "paymentStatus": "completed"
+        },
+        {
+            "orderId": "55",
+            "paymentDate": "2024-10-27 19:30:16.23+05:30",
+            "paymentId": "45",
+            "paymentMethod": "UPI",
+            "paymentStatus": "completed"
+        },
+        {
+            "orderId": "56",
+            "paymentDate": "2024-10-28 05:58:48.708+05:30",
+            "paymentId": "46",
+            "paymentMethod": "COD",
+            "paymentStatus": "pending"
+        }
+    ]
+}
+
+
+-------------- CART ITEM TABLE -----------------
+CREATE CART ITEM
+----------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/cartitem/addcartitem
+METHOD: POST
+BODY:
+{
+    "cartId":"13",
+    "productId":"1",
+    "quantity":"3"
+}
+
+Response: cartItem record updated successfully
+
+
+GET CART ITEMS BY CART ID
+--------------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/cartitem/getcartitems
+METHOD: GET
+BODY:
+{
+    "cartId":"13"
+}
+
+Response:
+{
+    "cartItem": {
+        "cartId": "13",
+        "cartItemId": "141",
+        "productId": "1",
+        "quantity": "3"
+    }
+}
+
+REMOVE CART ITEM BY CART ID
+---------------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/cartitem/removecartitemsbycartid
+METHOD: DELETE
+BODY:
+{
+    "cartId":"13"
+}
+
+Response: cartItem record removed successfully
+
+REMOVE CART ITEM BY CART ITEM ID
+--------------------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/cartitem/removecartitemsbycartitemid
+METHOD: DELETE
+BODY:
+{
+    "cartItemId":"104"
+}
+
+Response: cartItem record removed successfully
+
+
+--------------- ORDER TABLE -------------------
+ADD ORDER
+---------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/order/addorder
+METHOD: POST
+BODY:
+{
+    "userId":"52",
+    "totalAmount":"100.34"
+}
+
+Response: order record created successfully
+
+GET PENDING ORDER BY ORDER ID
+-----------------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/order/getpendingorderbyorderid?orderid=113
+METHOD: GET
+Response: 
+{
+    "orderDate": "2024-11-04 10:40:47.403511+05:30",
+    "orderId": "112",
+    "orderStatus": "pending",
+    "totalAmount": "50000.0",
+    "userId": "50"
+}
+
+GET ORDER BY USER ID
+--------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/order/getorderbyuserid?userid=50
+METHOD: GET
+Response:
+{
+    "order": [
+        {
+            "orderDate": "2024-11-03 16:36:00.196027+05:30",
+            "orderId": "103",
+            "orderStatus": "completed",
+            "totalAmount": "50000.0",
+            "userId": "50"
+        },
+        {
+            "orderDate": "2024-11-03 16:45:58.51392+05:30",
+            "orderId": "104",
+            "orderStatus": "canceled",
+            "totalAmount": "50000.0",
+            "userId": "50"
+        }
+    ]
+}
+
+CANCEL ORDER
+------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/order/cancelorder
+METHOD: PUT
+BODY: 
+{
+    "orderId":"108"
+}
+Response: canceled order successfully
+
+GET ORDER BY STATUS
+-------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/order/getorderbystatus?status=pending
+METHOD: GET
+Response:
+{
+    "order": [
+        {
+            "orderDate": "2024-11-03 16:50:47.46391+05:30",
+            "orderId": "105",
+            "orderStatus": "pending",
+            "totalAmount": "1.0",
+            "userId": "50"
+        },
+        {
+            "orderDate": "2024-11-03 16:51:01.298502+05:30",
+            "orderId": "106",
+            "orderStatus": "pending",
+            "totalAmount": "100.0",
+            "userId": "50"
+        }
+    ]
+}
+
+UPDATE STATUS TO COMPLETED
+--------------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/order/deliverorder
+METHOD: PUT
+BODY:
+{
+    "orderId":"113"
+}
+Response: delivered order successfully
+
+
+------------ ORDER ITEM TABLE ---------------
+CREATE ORDER ITEM
+-----------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/orderitem/addorderitem
+METHOD: POST
+BODY:
+{
+    "orderId":"112",
+    "productId":"1",
+    "quantity":"3",
+    "price":"109.4"
+}
+
+Response: created order item successfully
+
+GET ORDER ITEMS BY ORDER ID
+--------------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/orderitem/getorderitembyorderid?orderid=112
+METHOD: GET
+Response:
+{
+    "orderItem": [
+        {
+            "orderId": "112",
+            "orderItemId": "106",
+            "price": "50000.0",
+            "productId": "31",
+            "quantity": "1"
+        },
+        {
+            "orderId": "112",
+            "orderItemId": "110",
+            "price": "0.0",
+            "productId": "1",
+            "quantity": "3"
+        }
+    ]
+}
+
+GET MORE THAN ONE ORDER ITEMS WITH SAME ORDER ID BY USER ID
+-----------------------------------------------------------
+URL: http://localhost:8087/praveen_jersey_shop/webapi/orderitem/morethanonecartitem?userid=50
+METHOD: GET
+Response:
+{
+    "orderItem": [
+        {
+            "orderId": "112",
+            "orderItemId": "106",
+            "price": "50000.0",
+            "productId": "31",
+            "quantity": "1"
+        },
+        {
+            "orderId": "112",
+            "orderItemId": "110",
+            "price": "0.0",
+            "productId": "1",
+            "quantity": "3"
+        }
+    ]
+}

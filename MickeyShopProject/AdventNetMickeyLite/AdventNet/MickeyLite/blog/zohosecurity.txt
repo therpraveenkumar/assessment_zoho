@@ -1,0 +1,11 @@
+Module=ZOHOSECURITY
+SourceCoLabel=M2_30_PATCH
+BuildDate=Sep_08_2023
+BuildTime=15:55:08
+#BuildLabel=M2_30_PATCH_Sep_08_2023
+build-timestamp= 1694168728
+StaticVersion=v4
+Current_Build_Url=http://build/zoho/zohosecurity/webhost/M2_30_PATCH/Sep_08_2023
+Source_Changeset=0e0f855a725e07925d75f47734b76543e8000c61
+Build_Comment=
+BuildLabel=ZOHOSECURITY_M2_30_8

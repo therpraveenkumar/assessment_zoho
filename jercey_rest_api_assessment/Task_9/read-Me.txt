@@ -1,0 +1,14 @@
+
+Please run this project on the server
+
+1. then, go to com.praveen.jersey_client_crud_operation/RunCliedApi.java. 
+Please use your port number in the URL's (replace 8087 with your port number) at line number 11.
+
+2. go to \jercey_rest_api_assessment\Task_9\jersey_client_crud_operation\src\main\java\com\praveen\crud_operations\DbConnection.java
+
+replace 5432 to your port number and replace hello with your db name. reference given in the below line
+
+jdbc:postgresql://localhost:5432/hello
+
+3. then, right click and click on run as. then, click on java application
+

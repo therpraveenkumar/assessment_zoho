@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="FailOnErrorExample" basedir="." default="copyFiles">
+
+    <property name="source.dir" value="source"/>
+    <property name="dest.dir" value="destination"/>
+
+    <target name="copyFiles">
+
+        <copy todir="${dest.dir}" failonerror="true">
+            <fileset dir="${source.dir}">
+                <include name="*.txt"/>
+            </fileset>
+        </copy>
+    </target>
+
+</project>

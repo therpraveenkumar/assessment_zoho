@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="CompileAndCreateJar" basedir="." default="build">
+
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build/classes"/>
+    <property name="jar.dir" value="build/lib"/>
+    <property name="jar.name" value="myapp.jar"/>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${jar.dir}"/>
+    </target>
+
+    <target name="compile" depends="clean">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${build.dir}">
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${jar.name}" basedir="${build.dir}">
+        </jar>
+    </target>
+
+    <target name="build" depends="jar">
+        <echo message="Build completed. JAR file created at ${jar.dir}/${jar.name}"/>
+    </target>
+
+</project>

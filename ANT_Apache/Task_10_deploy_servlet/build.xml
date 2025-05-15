@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ServletAddNumbers" basedir="." default="build">
+    
+    <property name="src.dir" value="src"/>
+    <property name="web.dir" value="WebContent"/>
+    <property name="build.dir" value="build/classes"/>
+    <property name="war.dir" value="build/lib"/>
+    <property name="war.name" value="AddNumbersApp.war"/>
+    <property name="tomcat.webapps" value="C:/Users/praveen-22566/Downloads/apache-tomcat-9.0.96-windows-x64/apache-tomcat-9.0.96/webapps"/> 
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${war.dir}"/>
+    </target>
+
+    <target name="compile" depends="clean">
+        <mkdir dir="${build.dir}"/>
+        
+        <javac srcdir="${src.dir}" destdir="${build.dir}">
+            <classpath>
+                <pathelement location="lib/servlet-api.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="war" depends="compile">
+        <mkdir dir="${war.dir}"/>
+        
+        <!-- Create the WAR file -->
+        <war destfile="${war.dir}/${war.name}" webxml="${web.dir}/WEB-INF/web.xml">
+            <fileset dir="${web.dir}">
+                <exclude name="WEB-INF/web.xml"/>
+            </fileset>
+            <fileset dir="${build.dir}" includes="**/*.class"/>
+        </war>
+    </target>
+
+    <target name="deploy" depends="war">
+        <echo message="Deploying WAR file to Tomcat..." />
+        <copy file="${war.dir}/${war.name}" todir="${tomcat.webapps}"/>
+    </target>
+
+    <target name="openBrowser" depends="deploy">
+        <echo message="Opening browser to http://localhost:8087/AddNumbersApp/" />
+        <exec executable="cmd">
+            <arg line="/c start http://localhost:8087/AddNumbersApp/"/>
+        </exec>
+    </target>
+
+    <target name="build" depends="deploy,openBrowser">
+        <echo message="Build and deployment completed successfully."/>
+    </target>
+
+</project>

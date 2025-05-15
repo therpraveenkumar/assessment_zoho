@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="CopyFileExample" default="copy" basedir=".">
+
+    <property name="sourceDir" value="" />
+    <property name="destDir" value="" />
+    <property name="fileName" value="sample.txt" />
+
+    <target name="validate">
+        <echo message="Source Directory: ${sourceDir}" />
+        <echo message="Destination Directory: ${destDir}" />
+        <fail message="Source directory or destination directory is not defined." unless="sourceDir"/>
+        <fail message="Source directory or destination directory is not defined." unless="destDir"/>
+    </target>
+
+    <target name="copy" depends="validate">
+        <copy file="${sourceDir}/${fileName}" tofile="${destDir}/${fileName}">
+            <filterset>
+            </filterset>
+        </copy>
+        <echo message="File copied from ${sourceDir}/${fileName} to ${destDir}/${fileName}."/>
+    </target>
+
+</project>

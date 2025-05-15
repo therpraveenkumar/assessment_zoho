@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="CopyFilesExample" basedir="." default="copy-files">
+    
+    <property name="source.dir" value="source"/>
+    <property name="destination.dir" value="destination"/>
+
+    <target name="copy-files">
+        <copy todir="${destination.dir}">
+            <fileset dir="${source.dir}">
+                <include name="**/*"/>
+                <exclude name="**/*.class"/>
+            </fileset>
+        </copy>
+    </target>
+
+</project>

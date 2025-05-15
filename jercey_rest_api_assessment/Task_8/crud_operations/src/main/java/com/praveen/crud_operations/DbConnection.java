@@ -1,0 +1,50 @@
+package com.praveen.crud_operations;
+
+import java.sql.*;
+
+final public class DbConnection {
+    private Connection connection;
+
+    /**
+     * DbConnection constructor
+     */
+    private DbConnection() throws SQLException {
+    	try {
+            Class.forName("org.postgresql.Driver");
+            String url = "jdbc:postgresql://localhost:5432/hello";
+            String username = "postgres";
+            String password = "root";
+            this.connection = DriverManager.getConnection(url, username, password);
+        } catch (ClassNotFoundException ex) {
+            System.out.println("PostgreSQL JDBC Driver not found: " + ex.getMessage());
+        } catch (SQLException ex) {
+            System.out.println("Connection failed: " + ex.getMessage());
+            
+        }
+    }
+
+    /**
+     * get connection
+     *
+     * @return Connection
+     */
+    public Connection getConnection() {
+        return connection;
+    }
+
+    /**
+     * get DbConnection
+     *
+     * @return DbConnection
+     */
+    public static DbConnection getInstance() throws SQLException {
+        try {
+            return new DbConnection();
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+        }
+        return null;
+    }
+}
+
+

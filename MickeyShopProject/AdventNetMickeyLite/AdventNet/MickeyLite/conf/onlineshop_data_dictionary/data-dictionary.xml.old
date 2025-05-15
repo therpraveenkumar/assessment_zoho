@@ -1,0 +1,417 @@
+<!DOCTYPE data-dictionary SYSTEM "data-dictionary.dtd">
+<data-dictionary name="onlineshop_data_dictionary">
+         <table name="user">
+                  <columns>
+                           <column name="user_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>user.user_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="user_name">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="password">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>150</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+                           <column name="email">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                                    <!--Allowed Pattern-->
+                                    <allowed-values>
+                                             <pattern>^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$</pattern>
+                                    </allowed-values>
+                           </column>
+						   <column name="user_role">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+									<default-value>customer</default-value>
+                                    <nullable>false</nullable>
+									<!--Allowed Values-->
+                                    <allowed-values>
+                                             <value>customer</value>
+                                             <value>admin</value>
+                                    </allowed-values>
+                           </column>
+						   <column name="address_line">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>150</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+                           <column name="phone_number">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>10</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+                          <column name="city">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="state">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="country">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="pincode">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						    <column name="hint">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+                           <column name="user_DOB">
+                                    <data-type>DATE</data-type>
+                           </column>
+                  </columns>
+                  <primary-key name="user_PK">
+                           <primary-key-column>user_id</primary-key-column>
+                  </primary-key>
+                  <!--Unique Key-->
+                  <unique-keys>
+                           <unique-key name="user_UK">
+                                    <unique-key-column>email</unique-key-column>
+                           </unique-key>
+						   <unique-key name="user_UK2">
+                                    <unique-key-column>phone_number</unique-key-column>
+                           </unique-key>
+                  </unique-keys>
+         </table>
+		 
+		 <table name="product_category">
+                  <columns>
+                           <column name="category_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>product_category.category_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+						   <column name="category_name">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+                  </columns>
+                  <!--Primary Key-->
+                  <primary-key name="product_category_PK">
+                           <primary-key-column>category_id</primary-key-column>
+                  </primary-key>
+         </table>
+		 
+		 <table name="product">
+                  <columns>
+                           <column name="product_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>product.product_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+						   <column name="product_name">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="description">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="unit_price">
+                                    <data-type>DOUBLE</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="quantity">
+                                    <data-type>INTEGER</data-type>
+									<default-value>0</default-value>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="category_id">
+                                    <data-type>BIGINT</data-type>
+                           </column>
+                  </columns>
+                  <!--Primary Key-->
+                  <primary-key name="product_PK">
+                           <primary-key-column>product_id</primary-key-column>
+                  </primary-key>
+                  <foreign-keys>
+                           <foreign-key name="product_FK" reference-table-name="product_category">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>category_id</fk-local-column>
+                                                      <fk-reference-column>category_id</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                           </foreign-key>
+                  </foreign-keys>
+         </table>
+		 
+		 <table name="cart">
+                  <columns>
+                           <column name="cart_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>cart.cart_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="user_id">
+                                    <data-type>BIGINT</data-type>
+                           </column>
+                  </columns>
+                  <!--Primary Key-->
+                  <primary-key name="cart_PK">
+                           <primary-key-column>cart_id</primary-key-column>
+                  </primary-key>
+                  <foreign-keys>
+                           <foreign-key name="cart_FK" reference-table-name="user">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>user_id</fk-local-column>
+                                                      <fk-reference-column>user_id</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                           </foreign-key>
+                  </foreign-keys>
+         </table>
+		 
+		 <table name="cart_item">
+                  <columns>
+                           <column name="cart_item_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>cart_item.cart_item_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="cart_id">
+                                    <data-type>BIGINT</data-type>
+                           </column>
+						   <column name="product_id">
+                                    <data-type>BIGINT</data-type>
+                           </column>
+						   <column name="quantity">
+                                    <data-type>INTEGER</data-type>
+									<default-value>0</default-value>
+                                    <nullable>false</nullable>
+                           </column>
+                  </columns>
+                  <!--Primary Key-->
+                  <primary-key name="cart_item_PK">
+                           <primary-key-column>cart_item_id</primary-key-column>
+                  </primary-key>
+                  <foreign-keys>
+                           <foreign-key name="cart_item_FK" reference-table-name="cart">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>cart_id</fk-local-column>
+                                                      <fk-reference-column>cart_id</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                           </foreign-key>
+						   <foreign-key name="cart_item_FK2" reference-table-name="product">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>product_id</fk-local-column>
+                                                      <fk-reference-column>product_id</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                           </foreign-key>
+                  </foreign-keys>
+         </table>
+		 
+		 <table name="order">
+                  <columns>
+                           <column name="order_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>order.order_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="user_id">
+                                    <data-type>BIGINT</data-type>
+                           </column>
+                           <column name="total_amount">
+                                    <data-type>DOUBLE</data-type>
+									<nullable>false</nullable>
+                           </column>
+						   <column name="order_date">
+                                    <data-type>DATE</data-type>
+									<nullable>false</nullable>
+                           </column>
+						   <column name="status">
+                                    <data-type>CHAR</data-type>
+									<max-size>50</max-size>
+                                    <nullable>false</nullable>
+									<!--Allowed Values-->
+                                    <allowed-values>
+                                             <value>pending</value>
+											 <value>canceled</value>
+                                             <value>completed</value>
+                                    </allowed-values>
+                           </column>
+                  </columns>
+                  <!--Primary Key-->
+                  <primary-key name="order_PK">
+                           <primary-key-column>order_id</primary-key-column>
+                  </primary-key>
+                  <foreign-keys>
+                           <foreign-key name="order_FK" reference-table-name="user">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>user_id</fk-local-column>
+                                                      <fk-reference-column>user_id</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                                    
+                           </foreign-key>
+                  </foreign-keys>
+         </table>
+		 
+		 <table name="order_item">
+                  <columns>
+                           <column name="order_item_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>order_item.order_item_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="order_id">
+                                    <data-type>BIGINT</data-type>
+                           </column>
+						   <column name="product_id">
+                                    <data-type>BIGINT</data-type>
+                           </column>
+						   <column name="quantity">
+                                    <data-type>INTEGER</data-type>
+									<default-value>0</default-value>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="price">
+                                    <data-type>DOUBLE</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+                  </columns>
+                  <!--Primary Key-->
+                  <primary-key name="order_item_PK">
+                           <primary-key-column>order_item_id</primary-key-column>
+                  </primary-key>
+                  <foreign-keys>
+                           <foreign-key name="order_item_FK" reference-table-name="order">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>order_id</fk-local-column>
+                                                      <fk-reference-column>order_id</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                           </foreign-key>
+						   <foreign-key name="order_item_FK2" reference-table-name="product">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>product_id</fk-local-column>
+                                                      <fk-reference-column>product_id</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                           </foreign-key>
+                  </foreign-keys>
+         </table>
+		 
+		 <table name="payment">
+                  <columns>
+                           <column name="payment_id">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>payment.payment_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="order_id">
+                                    <data-type>BIGINT</data-type>
+                           </column>
+						   <column name="payment_method">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+									<!--Allowed Values-->
+                                    <allowed-values>
+                                             <value>UPI</value>
+                                             <value>COD</value>
+                                    </allowed-values>
+                           </column>
+						   <column name="payment_status">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+									<!--Allowed Values-->
+                                    <allowed-values>
+                                             <value>pending</value>
+                                             <value>completed</value>
+                                    </allowed-values>
+                           </column>
+						   <column name="payment_date">
+                                    <data-type>DATE</data-type>
+									<nullable>false</nullable>
+									
+                           </column>
+                  </columns>
+                  <!--Primary Key-->
+                  <primary-key name="payment_PK">
+                           <primary-key-column>payment_id</primary-key-column>
+                  </primary-key>
+                  <foreign-keys>
+                           <foreign-key name="payment_FK" reference-table-name="order">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>order_id</fk-local-column>
+                                                      <fk-reference-column>order_id</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                           </foreign-key>
+                  </foreign-keys>
+         </table>
+		<table name="cancel">
+                  <columns>
+                           <column name="cancel_id">
+                                    <data-type>BIGINT</data-type>
+									<uniquevalue-generation>
+                                             <generator-name>cancel.cancel_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="order_id">
+                                    <data-type>BIGINT</data-type>
+                           </column>
+						   <column name="reason">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="created_at">
+                                    <data-type>DATE</data-type>
+									<nullable>false</nullable>
+                           </column>
+                  </columns>
+                  <primary-key name="cancel_PK">
+                           <primary-key-column>cancel_id</primary-key-column>
+                  </primary-key>
+                  <foreign-keys>
+                           <foreign-key name="cancel_FK" reference-table-name="order">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>order_id</fk-local-column>
+                                                      <fk-reference-column>order_id</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                           </foreign-key>
+                  </foreign-keys>
+         </table>
+		 
+</data-dictionary>

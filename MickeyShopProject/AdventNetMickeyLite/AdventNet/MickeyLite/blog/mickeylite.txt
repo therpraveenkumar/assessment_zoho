@@ -1,0 +1,11 @@
+Module=MICKEYLITE
+SourceCoLabel=master
+BuildDate=Oct_05_2023
+BuildTime=18:15:29
+#BuildLabel=MICKEYLITE_Oct_05_2023
+build-timestamp= 1696509962
+StaticVersion=
+Current_Build_Url=http://build/framework/mickeylite/webhost/master/Oct_05_2023
+Source_Changeset=d00840d8265d92075eb2a71d9705d1d6b1644002
+Build_Comment=
+BuildLabel=MICKEYLITE_4380

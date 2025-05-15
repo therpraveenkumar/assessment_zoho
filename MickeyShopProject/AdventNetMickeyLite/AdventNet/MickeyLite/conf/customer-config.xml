@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><extended-configurations>
+    <configuration name="ECTag" value="d7f1c576624ac72ae6066f99653d9b55ae41d7a1ffa03044e58d9b5b24ad5e2f6757c1d2"/>
+    <configuration name="CryptTag" value="_3wHt33dDm44S__7fpvg"/>
+    <configuration name="mssql" value="">
+        <property name="certificate.subject" value="659d0133505f03b57015b4ab4f49f9cc736a91098f183ee6d4220960d795cfc81427eaf5"/>
+        <property name="masterkey.password" value="c6eb173cfb76cac1d9c77c51384f5c65e20f217e984aa62c39786525210a6fdd0c84479e"/>
+        <property name="certificate.name" value="d8f9e523e4d4163c0006922c56627dfbda247cbbef3ea5dd77b7d1b25a74e649405c9691"/>
+        <property name="symmetrickey.name" value="10d6480c0a63f20f3f36e0772e72add514141375f4d0f2354f14b64a1d7aa76d82108598"/>
+    </configuration>
+</extended-configurations>

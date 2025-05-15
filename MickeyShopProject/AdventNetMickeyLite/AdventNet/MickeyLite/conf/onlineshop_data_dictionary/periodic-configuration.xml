@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<generatedXML>
+  <Schedule schedule_id="Schedule:schedule_id:TestSample" schedule_name="Sample">
+  <Scheduled_Task retry_handler="com.adventnet.taskengine.internal.DefaultScheduleRetryHandler" task_id="TaskEngine_Task:task_id:TaskSample">
+    <ScheduledTask_Retry retry_count="5" retry_factor="5" retry_time_period="10"/>
+      <Task_Input instance_id="Task_Input:instance_id:InstanceSample" pool_id="1"/>
+    </Scheduled_Task>
+        <Periodic end_date="2024-11-30 01:00:00.0" start_date="2024-11-11 01:00:00.0" time_period="5" unit_of_time="seconds"/>
+  </Schedule>
+  <TaskEngine_Task class_name="com.praveen.profitengine.PraveenProfit" task_id="TaskEngine_Task:task_id:TaskSample" task_name="Sampletask"/>
+</generatedXML>

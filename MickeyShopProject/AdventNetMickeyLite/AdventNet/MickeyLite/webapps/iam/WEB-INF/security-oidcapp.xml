@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<security xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="security-accounts.xsd">
+    <urls>
+    	<url path="/oauth/v2/userinfo" description="open id user info details" https="true" method="post" sl_auth="oauth_required" api="true"/>
+    	<url path="/oauth/v2/keys" method="get">
+    	<response>
+    		  <headers>
+    		  	<header name="Access-Control-Allow-Origin" value=" * " />
+    		  </headers>
+    	</response>
+    	</url>
+    	<url path="/.well-known/openid-configuration" method="get">
+    	<response>
+    		  <headers>
+    		  	<header name="Access-Control-Allow-Origin" value=" * " />
+    		  </headers>
+    	</response>
+    	</url>
+    	
+    	<!--  changes for appaccount based client id generation -->
+    	<url path="/oauthapp/[A-Za-z0-9]+/oauthclient/register" description="Create oauth client id for app account based" https="true" authentication="required" method="post" api="true" internal="true" scoped-services="all">
+    		<param name="details" min-occurrences="1" type="JSONObject" template="client_register" max-len="-1"/>
+    	</url>
+    	<url path="/oauthapp/[A-Za-z0-9]+/oidcapp/create" description="Create Custom OIDC app" https="true" authentication="required" method="post" api="true" internal="true" scoped-services="all">
+    		<param name="oidcAppMeta" min-occurrences="1" type="JSONObject" template="oidcAppMeta" max-len="-1"/>
+    	</url>
+    	<url path="/oauthapp/[A-Za-z0-9]+/oidcapp/[0-9a-zA-Z]+/client/create" description="Create Custom OIDC Client app" https="true" authentication="required" method="post" api="true" internal="true" scoped-services="all">
+    		<param name="oauthClientMeta" min-occurrences="1" type="JSONObject" template="oauthClientMeta" max-len="-1"/>
+    	</url>
+    	<url path="/oauthapp/[A-Za-z0-9]+/oidcapp/[0-9a-zA-Z]+/update" description="Update Custom OIDC app" https="true" authentication="required" method="put" api="true" internal="true" scoped-services="all">
+    		<param name="oidcAppMeta" type="JSONObject" template="oidcAppMeta" max-len="-1"/>
+    	</url>
+    	
+    	<url path="/oauthapp/[A-Za-z0-9]+/oidcapp/[0-9a-zA-Z]+/client/[0-9\.a-zA-Z]+/update" description="Update Custom OIDC client app" https="true" authentication="required" method="put" api="true" internal="true" scoped-services="all">
+    		<param name="updateClientMeta" type="JSONObject" template="oauthClientMeta" max-len="-1"/>
+    		<param name="deleteClientMeta" type="JSONObject" template="oauthClientMeta" max-len="-1"/>
+    	</url>
+    	
+    	<url path="/oauthapp/[A-Za-z0-9]+/oidcapp/[0-9a-zA-Z]+/client/[0-9\.a-zA-Z]+/delete" description="Delete OIDC Client app" https="true" authentication="required" method="delete" api="true" internal="true" scoped-services="all"/>
+    	
+    	<url path="/oauthapp/[A-Za-z0-9]+/oauth/v2/keys" method="get">
+    	<response>
+    		  <headers>
+    		  	<header name="Access-Control-Allow-Origin" value=" * " />
+    		  </headers>
+    	</response>
+    	</url>
+    	<url path="/oauthapp/[A-Za-z0-9]+/.well-known/openid-configuration" method="get">
+    	<response>
+    		  <headers>
+    		  	<header name="Access-Control-Allow-Origin" value=" * " />
+    		  </headers>
+    	</response>
+    	</url>
+    	<url path="/oauthapp/[A-Za-z0-9]+/oauth/v2/userinfo" description="open id user info details" https="true" method="post" sl_auth="oauth_required" api="true"/>
+    </urls>
+    
+    <jsontemplates>
+    	<jsontemplate name="client_register">
+	 		<key name="redirect_uris" type="JSONArray" template="redirect_uri" array-size="1-20"/>
+	 		<key name="client_type" regex="code|token|device|nativeapp"/>
+	 		<key name="client_name" regex="iamcleartextpattern"/>
+	 		<key name="is_org_oauth" type="boolean"/>
+	 	</jsontemplate>
+	 	<jsontemplate name="oidcAppMeta">
+	 		<key name="app_name" regex="iamcleartextpattern"/>
+	 		<key name="identifier" regex="iamcleartextpattern"/>
+	 		<key name="description" regex="iamcleartextpattern"/>
+	 		<key name="bcl_uri_enabled" type="boolean"/>
+	 		<key name="back_channel_logout_uri" regex="serviceurl" />
+	 		<key name="at_custom_enabled" type="boolean"/>
+	 		<key name="at_custom"  type="JSONArray" template="claims_pattern" array-size="1-20" max-len="1000"/>
+	 		<key name="id_custom_enabled" type="boolean"/>
+	 		<key name="id_custom"  type="JSONArray" template="claims_pattern" array-size="1-20" max-len="1000"/>
+	 		<key name="status" type="boolean"/>
+	 	</jsontemplate>
+	 	<jsontemplate name="oauthClientMeta">
+	 		<key name="redirect_uris" type="JSONArray" template="redirect_uri" array-size="1-20"/>
+	 		<key name="js_domain_uris" type="JSONArray" template="redirect_uri" array-size="1-20"/>
+	 		<key name="status" type="boolean"/>
+	 		<key name="client_type" regex="code|token|device|nativeapp"/>
+	 	</jsontemplate>
+	 	<jsontemplate name="redirect_uri">
+    		<value regex="serviceurl" max-len="1000"/>
+    	</jsontemplate>
+    	<jsontemplate name="claims_pattern">
+    		<value type="JSONObject" template="claims"/>
+    	</jsontemplate>
+    	<jsontemplate name="claims">
+	 		<key name="serviceName" regex="iamcleartextpattern"/>
+	 		<key name="claims" type="JSONArray" template="claimNames" array-size="1-20"/>
+	 	</jsontemplate>
+	 	<jsontemplate name="claimNames">
+    		<value regex="iamcleartextpattern" max-len="100"/>
+    	</jsontemplate>
+	</jsontemplates>
+</security>

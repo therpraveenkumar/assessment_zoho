@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="DependsExample" default="default" basedir=".">
+
+    <property name="compile" value="true" />
+    <property name="test" value="true" />
+
+    <target name="compile">
+        <echo message="Compiling source code..."/>
+    </target>
+
+    <target name="test" depends="compile">
+        <echo message="Running tests..."/>
+    </target>
+
+    <target name="package" depends="compile,test">
+        <echo message="Packaging application..."/>
+    </target>
+
+    <target name="default" depends="package">
+        <echo message="Building complete."/>
+    </target>
+
+</project>

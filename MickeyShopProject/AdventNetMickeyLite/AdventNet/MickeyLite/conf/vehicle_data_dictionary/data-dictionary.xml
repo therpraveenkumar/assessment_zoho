@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE data-dictionary SYSTEM "data-dictionary.dtd">
+<data-dictionary name="vehicle_data_dictionary">
+         <table createtable="true" name="vehicletype" system="false" template="false">
+                  <columns>
+                           <column name="vehicle_type_id">
+                                    <data-type>INTEGER</data-type>
+                                    <nullable>false</nullable>
+									<uniquevalue-generation>
+                                             <generator-name>vehicletype.vehicle_type_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="type_name">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+                  </columns>
+                  <primary-key name="vehicletype_PK">
+                           <primary-key-column>vehicle_type_id</primary-key-column>
+                  </primary-key>
+                  <!--Unique Key-->
+                  <unique-keys>
+                           <unique-key name="vehicletype_UK">
+                                    <unique-key-column>type_name</unique-key-column>
+                           </unique-key>
+                  </unique-keys>
+         </table>
+		 
+		 <table createtable="true" name="vehicle" system="false" template="false">
+                  <columns>
+                           <column name="vehicle_id">
+                                    <data-type>INTEGER</data-type>
+                                    <nullable>false</nullable>
+                <uniquevalue-generation>
+                                             <generator-name>vehicle.vehicle_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+						   <column name="vehicle_type_id">
+                                    <data-type>INTEGER</data-type>
+									<nullable>false</nullable>
+                           </column>
+						   <column name="manufacturer">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+                  </columns>
+                  <!--Primary Key-->
+                  <primary-key name="vehicle_PK">
+                           <primary-key-column>vehicle_id</primary-key-column>
+                  </primary-key>
+				  <foreign-keys>
+                           <foreign-key name="vehicle_FK" reference-table-name="vehicletype">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>vehicle_type_id</fk-local-column>
+                                                      <fk-reference-column>vehicle_type_id</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                           </foreign-key>
+                  </foreign-keys>
+         </table>
+		 
+		 <table createtable="true" name="model" system="false" template="false">
+                  <columns>
+                           <column name="model_id">
+                                    <data-type>INTEGER</data-type>
+                                    <nullable>false</nullable>
+                <uniquevalue-generation>
+                                             <generator-name>model.model_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+						   <column name="vehicle_id">
+                                    <data-type>INTEGER</data-type>
+									<nullable>false</nullable>
+                           </column>
+						   <column name="model_name">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="price">
+                                    <data-type>DOUBLE</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+                  </columns>
+                  <!--Primary Key-->
+                  <primary-key name="model_PK">
+                           <primary-key-column>model_id</primary-key-column>
+                  </primary-key>
+                  <foreign-keys>
+                           <foreign-key name="model_FK" reference-table-name="vehicle">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>vehicle_id</fk-local-column>
+                                                      <fk-reference-column>vehicle_id</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                           </foreign-key>
+                  </foreign-keys>
+         </table>
+		 
+		 <table createtable="true" name="customer" system="false" template="false">
+                  <columns>
+                           <column name="customer_id">
+                                    <data-type>INTEGER</data-type>
+                                    <nullable>false</nullable>
+                <uniquevalue-generation>
+                                             <generator-name>customer.customer_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="name">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="email">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="phone">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>10</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+                  </columns>
+                  <!--Primary Key-->
+                  <primary-key name="customer_PK">
+                           <primary-key-column>customer_id</primary-key-column>
+                  </primary-key>
+				  <unique-keys>
+                           <unique-key name="customer_email_UK">
+                                    <unique-key-column>email</unique-key-column>
+                           </unique-key>
+						   <unique-key name="customer_phone_UK">
+                                    <unique-key-column>phone</unique-key-column>
+                           </unique-key>
+                  </unique-keys>
+         </table>
+		 
+		 <table createtable="true" name="sale" system="false" template="false">
+                  <columns>
+                           <column name="sale_id">
+                                    <data-type>INTEGER</data-type>
+                                    <nullable>false</nullable>
+                <uniquevalue-generation>
+                                             <generator-name>sale.sale_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="customer_id">
+                                    <data-type>INTEGER</data-type>
+									<nullable>false</nullable>
+                           </column>
+						   <column name="model_id">
+                                    <data-type>INTEGER</data-type>
+									<nullable>false</nullable>
+                           </column>
+						   <column name="sale_date">
+									<data-type>DATE</data-type>
+									<nullable>false</nullable>
+                           </column>
+                  </columns>
+                  <!--Primary Key-->
+                  <primary-key name="sale_PK">
+                           <primary-key-column>sale_id</primary-key-column>
+                  </primary-key>
+                  <foreign-keys>
+                           <foreign-key name="sale_FK" reference-table-name="customer">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>customer_id</fk-local-column>
+                                                      <fk-reference-column>customer_id</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                           </foreign-key>
+						   <foreign-key name="slae_FK2" reference-table-name="model">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>model_id</fk-local-column>
+                                                      <fk-reference-column>model_id</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                           </foreign-key>
+                  </foreign-keys>
+         </table>
+		 
+		 <table createtable="true" name="bill" system="false" template="false">
+                  <columns>
+                           <column name="bill_id">
+                                    <data-type>INTEGER</data-type>
+                                    <nullable>false</nullable>
+                <uniquevalue-generation>
+                                             <generator-name>bill.bill_id</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="sale_id">
+                                    <data-type>INTEGER</data-type>
+                           </column>
+                           <column name="total_amount">
+                                    <data-type>DOUBLE</data-type>
+									<nullable>false</nullable>
+                           </column>
+                  </columns>
+                  <!--Primary Key-->
+                  <primary-key name="bill_PK">
+                           <primary-key-column>bill_id</primary-key-column>
+                  </primary-key>
+                  <foreign-keys>
+                           <foreign-key name="bill_FK" reference-table-name="sale">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>sale_id</fk-local-column>
+                                                      <fk-reference-column>sale_id</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                                    
+                           </foreign-key>
+                  </foreign-keys>
+         </table>
+</data-dictionary>

@@ -1,0 +1,23 @@
+
+
+TABLES USER
+-----------
+1. user
+
+
+=> table name user
+column_name |     data_type
+-------------+-------------------
+ user_name   | character varying
+ country     | character varying
+ user_id     | bigint
+ 
+ values
+ --------
+  user_name | country | user_id
+-----------+---------+---------
+ praveen   | india   |       3
+ kumar     | china   |       4
+ solai     | india   |       5
+ new_kumar | us      |       2
+ new_user  | africa  |       6

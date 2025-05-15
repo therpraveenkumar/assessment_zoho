@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<project name="sample" basedir="." default="copy">
+   <target name="copy">
+     <echo>File Copied</echo>
+   </target>
+</project>

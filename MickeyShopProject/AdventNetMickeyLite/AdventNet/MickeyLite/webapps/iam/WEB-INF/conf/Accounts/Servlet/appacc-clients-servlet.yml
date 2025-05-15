@@ -1,0 +1,58 @@
+url_prefix : 
+   path : /oauthapp/[a-zA-Z0-9]+
+   is_regex : true
+servlet-mappings :
+   OAuthOrgClientCreation :
+     servlet-class : com.zoho.accounts.internal.oauth2.servlet.OrgClientCreation
+     servlet-paths :
+         - servlet-path :
+              path : /oauthclient/register
+              is_regex : false
+   CreateOIDCApp :
+     servlet-class : com.zoho.accounts.internal.oauth2.servlet.ManageOIDCApp
+     servlet-paths :
+         - servlet-path :
+              path : /oidcapp/create
+              is_regex : false
+   CreateOIDCClientApp :
+     servlet-class : com.zoho.accounts.internal.oauth2.servlet.ManageOIDCClientApp
+     servlet-paths :
+         - servlet-path :
+              path : /oidcapp/[0-9a-zA-Z]+/client/create
+              is_regex : false
+   UpdateOIDCApp :
+     servlet-class : com.zoho.accounts.internal.oauth2.servlet.ManageOIDCApp
+     servlet-paths :
+         - servlet-path :
+              path : /oidcapp/[0-9a-zA-Z]+/update
+              is_regex : true
+   UpdateOIDCClientApp :
+     servlet-class : com.zoho.accounts.internal.oauth2.servlet.ManageOIDCClientApp
+     servlet-paths :
+         - servlet-path :
+              path : /oidcapp/[0-9a-zA-Z]+/client/[0-9\.a-zA-Z]+/update
+              is_regex : true
+   DeleteOIDCClientApp :
+     servlet-class : com.zoho.accounts.internal.oauth2.servlet.ManageOIDCClientApp
+     servlet-paths :
+         - servlet-path :
+              path : /oidcapp/[0-9a-zA-Z]+/client/[0-9\.a-zA-Z]+/delete
+              is_regex : true
+   WellKnownRegistry :
+     servlet-class : com.zoho.accounts.actions.oauth2.OIDCDiscovery
+     servlet-paths :
+         - servlet-path :
+              path : /.well-known/openid-configuration
+              is_regex : false
+   OIDCKeys :
+     servlet-class : com.zoho.accounts.internal.oauth2.servlet.OIDCKeys
+     servlet-paths :
+         - servlet-path :
+              path : /oauth/v2/keys
+              is_regex : false
+   OIDCUserInfo :
+     servlet-class : com.zoho.accounts.internal.oauth2.servlet.OIDCUserInfo
+     servlet-paths :
+         - servlet-path :
+              path : /oauth/v2/userinfo
+              is_regex : false

@@ -1,0 +1,112 @@
+The Richardson Maturity Model is a framework designed to evaluate the maturity of a REST (Representational State Transfer) API. 
+It categorizes APIs based on their adherence to REST principles, providing a way to assess the quality of an API's design in terms of how well it follows RESTful 
+conventions and leverages the full potential of HTTP methods and status codes.
+
+The Levels of the Richardson Maturity Model
+--------------------------------------------
+
+The model was introduced by Leonard Richardson in 2008 and consists of four levels (Level 0 to Level 3)
+each representing a step toward a fully RESTful API. As the levels progress, the APIs become more RESTful, taking better advantage of HTTP capabilities like standard methods, 
+status codes, and URIs. Below is a detailed examination of each level:
+
+Level 0: The "One Big RPC" (Remote Procedure Call)
+Characteristics: At this level, an API is essentially a simple HTTP-based remote procedure call (RPC) system. 
+The API relies on a single HTTP POST method for all actions, meaning that the HTTP methods (GET, POST, PUT, DELETE) are not distinguished.
+
+Usage: A request URL is typically a catch-all endpoint, and parameters are passed in the body (usually as JSON or XML). The API does not leverage the inherent capabilities of 
+the HTTP protocol like different HTTP verbs (GET, POST, PUT, DELETE).
+
+Example:
+---------
+URL: POST /api
+Body: { "action": "getUser", "userId": 123 }
+The action (getUser, createUser, etc.) is decided by the body, not the HTTP method.
+Drawbacks:
+---------
+The API does not make use of HTTP semantics, such as using GET for retrieval, POST for creation, PUT for updating, and DELETE for removal.
+It results in an unclear API structure, making it hard to distinguish between different operations.
+
+Level 1: Using HTTP Methods Semantically
+----------------------------------------
+Characteristics: At this level, the API uses different HTTP methods for different actions, making the API more intuitive and aligning with basic REST principles. 
+Each HTTP method (GET, POST, PUT, DELETE) is now used semantically, meaning:
+
+GET retrieves data
+POST creates resources
+PUT updates resources
+DELETE removes resources
+
+Example:
+--------
+GET /api/users/123 to fetch a user with ID 123
+POST /api/users to create a new user
+PUT /api/users/123 to update user 123
+DELETE /api/users/123 to delete user 123
+
+Drawbacks:
+----------
+While HTTP methods are used properly, the URLs are often not designed according to REST conventions and may still resemble RPC-style routes.
+The API still may not fully leverage hypermedia (HATEOAS) to guide clients on what actions they can perform.
+
+Level 2: Use of HTTP Status Codes and Standardized URIs
+-------------------------------------------------------
+Characteristics: Level 2 APIs go a step further by utilizing HTTP status codes to indicate the outcome of an operation, as well as 
+employing standardized URIs (Uniform Resource Identifiers). This makes the API more discoverable, self-descriptive, and aligned with REST principles.
+
+For instance:
+200 OK for successful retrieval or modification
+201 Created for successful creation
+400 Bad Request for client errors
+404 Not Found for non-existent resources
+500 Internal Server Error for server-side issues
+
+Example:
+--------
+GET /api/users/123 → 200 OK with user data in the body
+POST /api/users → 201 Created with a response body containing the new user
+PUT /api/users/123 → 204 No Content indicating successful update (no body)
+DELETE /api/users/123 → 204 No Content (resource deleted)
+
+Drawbacks:
+----------
+Although status codes are used effectively, the API may still not include hypermedia links (HATEOAS), meaning that the client is not guided through related actions dynamically.
+
+Level 3: Hypermedia as the Engine of Application State (HATEOAS)
+----------------------------------------------------------------
+Characteristics: This is the highest maturity level and represents a fully RESTful API. At this level, the API makes full use of HATEOAS (Hypermedia As The Engine of Application State).
+ The client interacts with the API dynamically by following hypermedia links provided by the API, making the client-server interaction completely decoupled.
+
+Hypermedia allows clients to explore the API without prior knowledge of the available operations, making the API self-descriptive.
+This level involves not only standardized HTTP methods, status codes, and URIs but also dynamic responses that contain hyperlinks (usually in the form of JSON or XML).
+
+Example:
+--------
+GET /api/users/123
+json
+{
+    "userId": 123,
+    "name": "John Doe",
+    "links": [
+        { "rel": "self", "href": "/api/users/123" },
+        { "rel": "update", "href": "/api/users/123" },
+        { "rel": "delete", "href": "/api/users/123" },
+        { "rel": "friends", "href": "/api/users/123/friends" }
+    ]
+}
+Benefits:
+---------
+Clients can discover new operations and related resources based on hypermedia links, making the API highly extensible and adaptable.
+The client does not need to hard-code knowledge of URLs and operations, as they are provided dynamically in the response.
+
+Drawbacks:
+----------
+Implementing HATEOAS can be complex and may lead to a more heavyweight implementation, requiring the server to manage and provide dynamic links.
+Some simpler use cases might not need HATEOAS, and its adoption could overcomplicate the system.
+
+
+Conclusion
+==========
+The Richardson Maturity Model is an excellent tool for understanding and improving RESTful API design. It provides a clear path from simple 
+RPC-based APIs to more advanced, fully RESTful services. By following this model, developers can build APIs that are easier to maintain, more 
+scalable, and more user-friendly. However, the need for HATEOAS (Level 3) depends on the complexity of the API; not all applications require 
+such a high level of dynamic interaction. Nevertheless, understanding the model's levels helps developers make informed decisions about API design and usability.

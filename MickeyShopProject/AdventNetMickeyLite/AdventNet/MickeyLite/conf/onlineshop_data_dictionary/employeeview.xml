@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<custom-view-configurations>
+    <SelectQuery numofobjects="0" queryid="SelectQuery:queryid:PraveenOrderTable" startindex="0">
+        <SelectTable tablealias="order" tablename="order">
+            <SelectColumn columnalias="order_id" columnindex="0" columnname="order_id"/>
+            <SelectColumn columnalias="user_id" columnindex="1" columnname="user_id"/>
+			<SelectColumn columnalias="total_amount" columnindex="2" columnname="total_amount"/>
+			<SelectColumn columnalias="order_date" columnindex="3" columnname="order_date"/>
+			<SelectColumn columnalias="status" columnindex="4" columnname="status"/>
+            <SortColumn ascending_order="true" columnalias="order_id" columnname="order_id" sortindex="0"/>
+        </SelectTable>
+        <CustomViewConfiguration cvid="CustomViewConfiguration:cvid:PraveenOrderTable" cvname="PraveenOrderTable"/>
+    </SelectQuery>
+</custom-view-configurations>

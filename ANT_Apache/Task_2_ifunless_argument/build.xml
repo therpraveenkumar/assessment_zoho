@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="IfUnlessExample" default="default" basedir=".">
+
+    <property name="doCompile" value="true" />
+
+    <target name="if-example" if="doCompile">
+        <echo message="Compiling source code..."/>
+    </target>
+
+    <target name="unless-example" unless="skipCompile">
+        <echo message="Skipping unless-example..."/>
+    </target>
+
+    <target name="default" depends="if-example, unless-example">
+        <echo message="Both 'if' and 'unless' examples have been executed."/>
+    </target>
+
+</project>

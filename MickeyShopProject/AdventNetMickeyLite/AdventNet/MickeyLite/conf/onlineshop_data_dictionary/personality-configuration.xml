@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- $Id: personality-configuration.xml,v 1.5 2005/06/10 06:18:14 vinod Exp $ -->
+<personality-configuration>
+<DominantTableConfig DOMINANTTABLEID="order" isindexed="false" nonindexlimit="31">
+
+<PersonalityConfiguration personalityid="PersonalityConfiguration:personalityid:1" personalityname="employeeDetails" dominanttableid="order" modulename="onlineshop_data_dictionary" description="to get complete employee details">
+
+<ConstituentTable tableid="order" mandatory="false" tableindex="0" />
+<ConstituentTable tableid="payment" mandatory="false" tableindex="1" fkconstraint_id="payment_FK"/>
+
+</PersonalityConfiguration>
+</DominantTableConfig>
+</personality-configuration>

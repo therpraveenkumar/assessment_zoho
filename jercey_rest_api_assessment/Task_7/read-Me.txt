@@ -1,0 +1,5 @@
+Please use your port number in the URL's (replace 8087 with your port number). 
+use below URL's after started your tomcat server. 
+
+1. http://localhost:8087/helloApp/webresources/myresource/1
+2. http://localhost:8087/helloApp/webresources/myresource/102

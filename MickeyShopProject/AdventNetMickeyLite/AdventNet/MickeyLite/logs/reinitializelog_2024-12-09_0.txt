@@ -1,0 +1,106 @@
+[11:01:08:652]|[12-09-2024]|[com.adventnet.mfw.PatchUpdater]|[WARNING]|[30]: The 'fixes' directory is missing. Product loads the jar(s) without PATCH|
+[11:01:08:653]|[12-09-2024]|[com.adventnet.mfw.Starter]|[INFO]|[30]: Going to add jars from Directory : ..\lib to classpath|
+[11:01:08:665]|[12-09-2024]|[com.adventnet.mfw.Starter]|[INFO]|[30]: Going to add jars from Directory : ..\lib/zohosecurity to classpath|
+[11:01:08:668]|[12-09-2024]|[com.adventnet.mfw.Starter]|[INFO]|[30]: Going to add jars from Directory : ..\lib/fips to classpath|
+[11:01:08:668]|[12-09-2024]|[com.adventnet.mfw.Starter]|[INFO]|[30]: Going to add jars from Directory : ..\lib/java_memcached to classpath|
+[11:01:08:669]|[12-09-2024]|[com.adventnet.mfw.Starter]|[INFO]|[30]: Going to add jars from Directory : ..\lib/tomcat to classpath|
+[11:01:08:672]|[12-09-2024]|[com.adventnet.mfw.Starter]|[INFO]|[30]: Going to add jars from Directory : ..\lib/resources to classpath|
+[11:01:08:759]|[12-09-2024]|[com.zoho.mickey.startup.MEServer]|[INFO]|[30]: Creating new Server instance|
+[11:01:08:760]|[12-09-2024]|[com.zoho.mickey.startup.MEServer]|[INFO]|[30]: Unable to find class com.zoho.autoupgrade.AutoUpgrade in JVM, disabling AutoUpgrade|
+[11:01:08:793]|[12-09-2024]|[com.adventnet.persistence.ConfigurationParser]|[INFO]|[30]: C:\Users\praveen-22566\Desktop\MickeyShopProject\AdventNetMickeyLite\AdventNet\MickeyLite\bin\..\conf\product-config.xml does not exists, hence it is skipped|
+[11:01:08:794]|[12-09-2024]|[com.adventnet.persistence.ConfigurationParser]|[INFO]|[30]: Processing C:\Users\praveen-22566\Desktop\MickeyShopProject\AdventNetMickeyLite\AdventNet\MickeyLite\bin\..\conf\customer-config.xml|
+[11:01:08:801]|[12-09-2024]|[com.adventnet.persistence.ConfigurationParser]|[INFO]|[30]: C:\Users\praveen-22566\Desktop\MickeyShopProject\AdventNetMickeyLite\AdventNet\MickeyLite\bin\..\conf\product-config.xml does not exists, hence it is skipped|
+[11:01:08:801]|[12-09-2024]|[com.adventnet.persistence.ConfigurationParser]|[INFO]|[30]: Processing C:\Users\praveen-22566\Desktop\MickeyShopProject\AdventNetMickeyLite\AdventNet\MickeyLite\bin\..\conf\customer-config.xml|
+[11:01:09:534]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Reading ..\conf\database_params.conf |
+[11:01:09:537]|[12-09-2024]|[com.adventnet.persistence.util.DCManager]|[INFO]|[30]: All valid properties are available for dctype :: defaultdc, database :: postgres|
+[11:01:09:537]|[12-09-2024]|[com.adventnet.persistence.util.DCManager]|[INFO]|[30]: dc-types defined in dynamic-column-types.props :: [defaultdc]|
+[11:01:09:539]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Loading UDTs from directory :: ..\conf\udt|
+[11:01:09:549]|[12-09-2024]|[com.adventnet.db.persistence.metadata.DataTypeManager]|[INFO]|[30]: Loaded data type :: AGE|
+[11:01:09:549]|[12-09-2024]|[com.adventnet.db.persistence.metadata.DataTypeManager]|[INFO]|[30]: Loaded data type :: CURRENCY|
+[11:01:09:550]|[12-09-2024]|[com.adventnet.db.persistence.metadata.DataTypeManager]|[INFO]|[30]: Loaded data type :: CURRENCYSYMBOL|
+[11:01:09:551]|[12-09-2024]|[com.adventnet.db.persistence.metadata.DataTypeManager]|[INFO]|[30]: Loaded data type :: DAYS|
+[11:01:09:552]|[12-09-2024]|[com.adventnet.db.persistence.metadata.DataTypeManager]|[INFO]|[30]: Loaded data type :: GENDER|
+[11:01:09:552]|[12-09-2024]|[com.adventnet.db.persistence.metadata.DataTypeManager]|[INFO]|[30]: Loaded data type :: HONORIFIC|
+[11:01:09:553]|[12-09-2024]|[com.adventnet.db.persistence.metadata.DataTypeManager]|[INFO]|[30]: Loaded data type :: JSONSTRING|
+[11:01:09:553]|[12-09-2024]|[com.adventnet.db.persistence.metadata.DataTypeManager]|[INFO]|[30]: Loaded data type :: LENGTH|
+[11:01:09:554]|[12-09-2024]|[com.adventnet.db.persistence.metadata.DataTypeManager]|[INFO]|[30]: Loaded data type :: MONTHS|
+[11:01:09:557]|[12-09-2024]|[com.adventnet.db.persistence.metadata.DataTypeManager]|[INFO]|[30]: Loaded data type :: UUID|
+[11:01:09:558]|[12-09-2024]|[com.adventnet.db.persistence.metadata.DataTypeManager]|[INFO]|[30]: Loaded data type :: WEIGHT|
+[11:01:09:560]|[12-09-2024]|[com.adventnet.db.persistence.metadata.DataTypeManager]|[INFO]|[30]: Loaded data type :: SERIAL|
+[11:01:09:563]|[12-09-2024]|[com.adventnet.db.persistence.metadata.DataTypeManager]|[INFO]|[30]: Loaded data type :: ZCHAR|
+[11:01:09:563]|[12-09-2024]|[com.adventnet.db.persistence.metadata.DataTypeManager]|[SEVERE]|[30]: DataTypes initialized from :: ..\conf\udt|
+[11:01:09:565]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Reading ..\conf\database_params.conf |
+[11:01:09:669]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Driver Name :: org.postgresql.Driver|
+[11:01:09:669]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Connection URL :: jdbc:postgresql://localhost:5432/mickeyshop?charSet=UTF-8|
+[11:01:09:669]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Username :: postgres|
+[11:01:09:669]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Min Size :: 1|
+[11:01:09:669]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Max Size :: 20|
+[11:01:09:669]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Transaction Isolation :: TRANSACTION_READ_COMMITTED|
+[11:01:09:710]|[12-09-2024]|[com.adventnet.ds.DefaultDataSourcePlugIn]|[INFO]|[30]: DataSourcecom.zoho.cp.TxDataSource@1cd96cd3|
+[11:01:09:710]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Archive Adapter class ::: com.adventnet.db.archive.DefaultArchiveAdapter|
+[11:01:09:710]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Storage Adapter class ::: null|
+[11:01:09:713]|[12-09-2024]|[com.adventnet.db.api.RelationalAPI]|[SEVERE]|[30]: haltjvm.on.dbcrash is set to [true]|
+[11:01:09:713]|[12-09-2024]|[com.adventnet.db.adapter.Jdbc20DBAdapter]|[INFO]|[30]: shutDownStrings :: []|
+[11:01:09:716]|[12-09-2024]|[com.adventnet.db.adapter.Jdbc20DBAdapter]|[INFO]|[30]: Loading the function patterns from the file :: [..\conf\Persistence\postgres_functionpatterns.txt]|
+[11:01:09:717]|[12-09-2024]|[com.adventnet.db.adapter.Jdbc20DBAdapter]|[INFO]|[30]: isDBMigration running :: false|
+[11:01:09:717]|[12-09-2024]|[com.adventnet.db.adapter.Jdbc20DBAdapter]|[INFO]|[30]: isDBMigration dest DB :: false|
+[11:01:09:718]|[12-09-2024]|[com.adventnet.db.adapter.postgres.PostgresDBAdapter]|[WARNING]|[30]: Identifier [pgsql_identifiers.txt] file not exist for this database|
+[11:01:09:720]|[12-09-2024]|[com.adventnet.db.adapter.postgres.DefaultPostgresDBInitializer]|[INFO]|[30]: db.home ::: C:\Users\praveen-22566\Desktop\MickeyShopProject\AdventNetMickeyLite\AdventNet\MickeyLite\bin\\..\pgsql|
+[11:01:09:722]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: DataSourcePlugIn is initialized successfully|
+[11:01:09:722]|[12-09-2024]|[com.adventnet.ds.DataSourceManager]|[INFO]|[30]: No additional datasources are defined.|
+[11:01:09:722]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: create.db is :: null|
+[11:01:09:722]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Template replaced url :: jdbc:postgresql://localhost:5432/mickeyshop?charSet=UTF-8|
+[11:01:09:864]|[12-09-2024]|[com.adventnet.db.adapter.postgres.PostgresDBAdapter]|[INFO]|[30]: Postgres version ::: 16.4|
+[11:01:09:865]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Template replaced url :: jdbc:postgresql://localhost:5432/mickeyshop?charSet=UTF-8|
+[11:01:09:865]|[12-09-2024]|[com.adventnet.db.adapter.Jdbc20DBAdapter]|[INFO]|[30]: splitConnectionURL :: {jdbcurl_props_separator=?, url_props_delimiter=&, Server=localhost, Port=5432, urlProps={charSet=UTF-8}, DBName=mickeyshop, urlWithoutProps=jdbc:postgresql://localhost:5432/mickeyshop}|
+[11:01:09:865]|[12-09-2024]|[com.adventnet.db.adapter.postgres.PostgresDBAdapter]|[INFO]|[30]: psql not found at :: C:\Users\praveen-22566\Desktop\MickeyShopProject\AdventNetMickeyLite\AdventNet\MickeyLite\bin\..\pgsql\bin|
+[11:01:09:866]|[12-09-2024]|[com.adventnet.db.adapter.postgres.PostgresDBAdapter]|[INFO]|[30]: isBundled :: false|
+[11:01:09:869]|[12-09-2024]|[com.adventnet.db.adapter.AbstractRestoreHandler]|[INFO]|[30]: Restore process fully completed.|
+[11:01:09:869]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Template replaced url :: jdbc:postgresql://localhost:5432/mickeyshop?charSet=UTF-8|
+[11:01:09:869]|[12-09-2024]|[com.adventnet.db.adapter.Jdbc20DBAdapter]|[INFO]|[30]: splitConnectionURL :: {jdbcurl_props_separator=?, url_props_delimiter=&, Server=localhost, Port=5432, urlProps={charSet=UTF-8}, DBName=mickeyshop, urlWithoutProps=jdbc:postgresql://localhost:5432/mickeyshop}|
+[11:01:09:869]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Template replaced url :: jdbc:postgresql://localhost:5432/mickeyshop?charSet=UTF-8|
+[11:01:09:869]|[12-09-2024]|[com.adventnet.db.adapter.postgres.PostgresDBAdapter]|[INFO]|[30]: Going to create postgres extensions if not exists ...|
+[11:01:09:878]|[12-09-2024]|[com.adventnet.db.adapter.Jdbc20DBAdapter]|[INFO]|[30]: DB Version            :: 16.4|
+[11:01:09:893]|[12-09-2024]|[com.adventnet.db.adapter.Jdbc20DBAdapter]|[INFO]|[30]: DB Architecture       :: 64|
+[11:01:09:898]|[12-09-2024]|[com.adventnet.db.adapter.Jdbc20DBAdapter]|[INFO]|[30]: DB Data Directory     :: C:/Program Files/PostgreSQL/16/data|
+[11:01:09:903]|[12-09-2024]|[com.adventnet.persistence.xml.DynamicValueHandlerRepositry]|[INFO]|[30]: Going to load DVH :: jar:file:/C:/Users/praveen-22566/Desktop/MickeyShopProject/AdventNetMickeyLite/AdventNet/MickeyLite/bin/../lib/AdvPersistence.jar!/com/adventnet/db/persistence/metadata/conf/dynamic-value-handlers.xml|
+[11:01:09:914]|[12-09-2024]|[com.adventnet.iam.security.SecurityUtil]|[WARNING]|[30]: Unable to Load LogClientThreadLocalClass . Class Name : com.zoho.logs.logclient.LogClientThreadLocal, Exception java.lang.ClassNotFoundException: com.zoho.logs.logclient.LogClientThreadLocal|
+[11:01:10:044]|[12-09-2024]|[com.adventnet.db.persistence.metadata.MetaDataEntityResolver]|[INFO]|[30]: Entered resolveEntity2 :: systemId :: [data-dictionary.dtd], publicId :: [null], name :: [[dtd]], baseURI :: [null]|
+[11:01:10:058]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[INFO]|[30]: Parsing the File :: file:/C:/Users/praveen-22566/Desktop/MickeyShopProject/AdventNetMickeyLite/AdventNet/MickeyLite/bin/../lib/AdvPersistence.jar!/com/adventnet/db/persistence/metadata/conf/meta-dd.xml|
+[11:01:10:070]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[Appl_id]|
+[11:01:10:072]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: Ignoring the index definition [TableDetails_IDX2] for table [TableDetails] as it redefines the Unique Key [TableDetails_UK0]|
+[11:01:10:072]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: Foreign key name Appl_id is same as a column name in the table TableDetails|
+[11:01:10:073]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[ColumnDetails_FK1]|
+[11:01:10:073]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[RangeValues_FK1]|
+[11:01:10:074]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[AllowedValues_FK1]|
+[11:01:10:074]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[AllowedPattern_FK1]|
+[11:01:10:074]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[ConstraintDefinition_FK1]|
+[11:01:10:075]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[UniqueKeyDefinition_FK1]|
+[11:01:10:075]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[UniqueKeyDefinition_FK2]|
+[11:01:10:075]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[PKDefinition_FK1]|
+[11:01:10:075]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[PKDefinition_FK2]|
+[11:01:10:076]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[FKDefinition_FK1]|
+[11:01:10:076]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[FKDefinition_FK2]|
+[11:01:10:076]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[FKColumnDefinition_FK1]|
+[11:01:10:076]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[FKColumnDefinition_FK2]|
+[11:01:10:076]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[FKColumnDefinition_FK3]|
+[11:01:10:077]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[IndexDefinition_FK1]|
+[11:01:10:077]|[12-09-2024]|[com.adventnet.db.persistence.metadata.parser.DataDictionaryParser]|[WARNING]|[30]: The isBidirectional attribute is no longer supported from MICKEYLITE_5000.Please remove this attribute in foreign key[IndexDefinition_FK2]|
+[11:01:10:350]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: loaded the module dd :: Persistence|
+[11:01:10:351]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: persURL :: jar:file:/C:/Users/praveen-22566/Desktop/MickeyShopProject/AdventNetMickeyLite/AdventNet/MickeyLite/bin/../lib/AdvPersistence.jar!/com/adventnet/db/persistence/metadata/conf/personality-configuration.xml|
+[11:01:10:364]|[12-09-2024]|[com.adventnet.persistence.xml.XmlParser]|[INFO]|[30]: Going to parse the XML :: [jar:file:/C:/Users/praveen-22566/Desktop/MickeyShopProject/AdventNetMickeyLite/AdventNet/MickeyLite/bin/../lib/AdvPersistence.jar!/com/adventnet/db/persistence/metadata/conf/personality-configuration.xml]|
+[11:01:10:373]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: No Preprocessor found.|
+[11:01:10:375]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: Going to loadErrorCodes :: [C:\Users\praveen-22566\Desktop\MickeyShopProject\AdventNetMickeyLite\AdventNet\MickeyLite\bin\..\conf\Persistence\error-codes.xml]|
+[11:01:10:376]|[12-09-2024]|[com.adventnet.persistence.xml.XmlParser]|[INFO]|[30]: Going to parse the XML :: [file:/C:/Users/praveen-22566/Desktop/MickeyShopProject/AdventNetMickeyLite/AdventNet/MickeyLite/bin/../conf/Persistence/error-codes.xml]|
+[11:01:10:381]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[SEVERE]|[30]: Already an errorcode [1,217] has been defined, hence over-writing it|
+[11:01:10:381]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[SEVERE]|[30]: Already an errorcode [1,451] has been defined, hence over-writing it|
+[11:01:10:382]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[SEVERE]|[30]: Already an errorcode [547] has been defined, hence over-writing it|
+[11:01:10:382]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: ErrorCodes :: {MySQLErrorCode={1216=1015 - ER_NO_REFERENCED_ROW, 1217=1016 - ER_ROW_IS_REFERENCED, 1058=1008 - ER_WRONG_VALUE_COUNT, 1062=1001 - ER_DUP_ENTRY, 1063=1010 - ER_WRONG_FIELD_SPEC, 1097=1014 - ER_TOO_BIG_SET, 1291=1003 - ER_DUPLICATED_VALUE_IN_TYPE, 1067=1012 - ER_INVALID_DEFAULT, 1451=1016 - ER_ROW_IS_REFERENCED, 1452=1015 - ER_NO_REFERENCED_ROW, 1166=1011 - ER_WRONG_COLUMN_NAME, 1230=1013 - ER_NO_DEFAULT, 1263=1006 - ER_WARN_NULL_TO_NOTNULL, 1231=1017 - ER_WRONG_VALUE_FOR_VAR, 1264=1018 - ER_WARN_DATA_OUT_OF_RANGE, 1232=1019 - ER_WRONG_TYPE_FOR_VAR, 1138=1005 - ER_INVALID_USE_OF_NULL, 1171=1007 - ER_PRIMARY_CANT_HAVE_NULL, 1140=1032 - ER_MIX_OF_GROUP_FUNC_AND_FIELDS, 1205=1024 - ER_LOCK_WAIT_TIMEOUT, 1206=1025 - ER_LOCK_TABLE_FULL, 1111=1031 - ER_INVALID_GROUP_FUNC_USE, 1048=1004 - ER_BAD_NULL_ERROR, 1213=1027 - ER_LOCK_DEADLOCK}, PgSQLErrorCode={23505=1001 - ER_DUP_ENTRY, 42703=1011 - ER_WRONG_COLUMN_NAME, 22001=1018 - ER_WARN_DATA_OUT_OF_RANGE, 22P02=1017 - ER_WRONG_VALUE_FOR_VAR, 22003=1014 - ER_TOO_BIG_SET, 42601=1008 - ER_WRONG_VALUE_COUNT, 23502=1004 - ER_BAD_NULL_ERROR, 23503=1015 - ER_NO_REFERENCED_ROW}, AdventNetErrorCode={1024=1024 - ER_LOCK_WAIT_TIMEOUT, 1025=1025 - ER_LOCK_TABLE_FULL, 1027=1027 - ER_LOCK_DEADLOCK, 1031=1031 - ER_INVALID_GROUP_FUNC_USE, 1032=1032 - ER_MIX_OF_GROUP_FUNC_AND_FIELDS, 1001=1001 - ER_DUP_ENTRY, 1003=1003 - ER_DUPLICATED_VALUE_IN_TYPE, 1004=1004 - ER_BAD_NULL_ERROR, 1005=1005 - ER_INVALID_USE_OF_NULL, 1006=1006 - ER_WARN_NULL_TO_NOTNULL, 1007=1007 - ER_PRIMARY_CANT_HAVE_NULL, 1008=1008 - ER_WRONG_VALUE_COUNT, 1010=1010 - ER_WRONG_FIELD_SPEC, 1011=1011 - ER_WRONG_COLUMN_NAME, 1012=1012 - ER_INVALID_DEFAULT, 1013=1013 - ER_NO_DEFAULT, 1014=1014 - ER_TOO_BIG_SET, 1015=1015 - ER_NO_REFERENCED_ROW, 1016=1016 - ER_ROW_IS_REFERENCED, 1017=1017 - ER_WRONG_VALUE_FOR_VAR, 1018=1018 - ER_WARN_DATA_OUT_OF_RANGE, 1019=1019 - ER_WRONG_TYPE_FOR_VAR}, MsSQLErrorCode={8114=1017 - ER_WRONG_VALUE_FOR_VAR, 2627=1001 - ER_DUP_ENTRY, 515=1004 - ER_BAD_NULL_ERROR, 8115=1014 - ER_TOO_BIG_SET, 547=1016 - ER_ROW_IS_REFERENCED, 8152=1018 - ER_WARN_DATA_OUT_OF_RANGE, 2601=1001 - ER_DUP_ENTRY, 109=1008 - ER_WRONG_VALUE_COUNT, 110=1008 - ER_WRONG_VALUE_COUNT, 207=1011 - ER_WRONG_COLUMN_NAME}}|
+[11:01:10:410]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: loaded the module dd :: Audit|
+[11:01:10:470]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: loaded the module dd :: Authentication|
+[11:01:10:494]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: loaded the module dd :: Authorization|
+[11:01:10:512]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: loaded the module dd :: CustomView|
+[11:01:10:535]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: loaded the module dd :: TaskEngine|
+[11:01:10:569]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: loaded the module dd :: ClientFramework|
+[11:01:10:619]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: loaded the module dd :: ClientComponents|
+[11:01:10:633]|[12-09-2024]|[com.adventnet.persistence.PersistenceInitializer]|[INFO]|[30]: loaded the module dd :: onlineshop_data_dictionary|
